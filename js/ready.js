@@ -9,13 +9,17 @@ jQuery(document).ready(function () {
             .attr('class','start_msg btn-lg btn-success')
             .text('Go!'),
 
-        new_div = $('<li>').append($('<h3>').text(search)).append(go_button),
-        new_li=$('<li>').append(new_div);
+        new_div = $('<li>').append($('<h3>').text(search))
+            .append(go_button),
+        
+        new_li=$('<li>')
+            .append(new_div);
+        
         $('#search_list').append(new_li)
     }
 
     var emit_msg = function(msg_payload){
-        
+                
         socket.emit('message', { eventType: 'moveUser', payload: msg_payload });
         if ($('#send_list').children().length>15){
             $('#send_list').children().last().detach()

@@ -21,6 +21,10 @@ $(document).on("moveSearch", function (e, response) {
 });
 
 $(document).on("moveUser", function (e, response) {
+    if ($('#message_list').children().length>15){
+        $('#send_list').children().last().detach()
+    }
+
     var new_li = $('<li>').html($('<div>')
         .attr('class','container')
         .text(JSON.stringify(response)));
