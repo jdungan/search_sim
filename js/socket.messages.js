@@ -3,7 +3,20 @@ var socket = io.connect('http://206.214.164.229');
 
 
 socket.on('message', function (data) {
-   $.event.trigger(data.message.eventType,data.message.payload);   
+    if ($('#message_list').children().length>15){
+        $('#send_list').children().last().detach()
+    }
+
+    var new_li = $('<li>').html(
+        $('<div>')
+            .data(data)
+            .attr('style','overflow: hidden')
+            .attr('class','container')
+            .text(JSON.stringify(data)));
+
+    $('#message_list').prepend(new_li)
+
+   // $.event.trigger(data.message.eventType,data.message.payload);   
       
 });  
 
@@ -21,14 +34,5 @@ $(document).on("moveSearch", function (e, response) {
 });
 
 $(document).on("moveUser", function (e, response) {
-    if ($('#message_list').children().length>15){
-        $('#send_list').children().last().detach()
-    }
-
-    var new_li = $('<li>').html($('<div>')
-        .attr('class','container')
-        .text(JSON.stringify(response)));
-
-    $('#message_list').prepend(new_li)
 
 });

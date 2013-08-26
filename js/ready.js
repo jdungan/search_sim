@@ -17,6 +17,10 @@ jQuery(document).ready(function () {
         
         $('#search_list').append(new_li)
     }
+    
+    var x = new wdgts.message_list('send_list')
+
+    $('#outgoing').append(x);
 
     var emit_msg = function(msg_payload){
                 
@@ -24,7 +28,7 @@ jQuery(document).ready(function () {
         if ($('#send_list').children().length>15){
             $('#send_list').children().last().detach()
         }
-        $('#send_list').append($('<li>').text(msg_payload));
+        $('#send_list').append($('<li>').text(JSON.stringify(msg_payload)));
     };
     
     $('button.start_msg').on('click',function(){
