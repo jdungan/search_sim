@@ -1,0 +1,72 @@
+<DOCTYPE html>
+<html lang="en">
+  <head>
+      <script src= "http://code.jquery.com/jquery-1.10.0.min.js"></script>
+
+<!-- Load jquery and jquerymobile before jqm pages to avoid flash of ugly on loading -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="./js/socket.io.min.js"></script>
+    <script src='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+    <script type="text/javascript" src="./js/socket.messages.js"></script>
+    <script type="text/javascript" src="./js/searches.js"></script>
+    <script type="text/javascript" src="./js/ready.js"></script>
+
+  </head>
+  <body>
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Search Simulator</h1>
+        </div>
+      </div>
+      
+      
+      
+      <div class="row">
+        <div class="col-md-9 col-md-push-3">
+            <div class="panel panel-default">
+              <!-- Default panel contents -->
+              <div class="panel-heading">Search Objects</div>
+              <div class="panel-body">
+              </div>
+              <!-- List group -->
+              <ul id='search_list' class="list-group">
+              </ul>
+            </div>
+        </div>
+        
+        <div class="col-md-9 col-md-push-3">
+            <div class="panel panel-default">
+              <!-- Default panel contents -->
+              <div class="panel-heading">Outgoing messages</div>
+              <div class="panel-body">
+              </div>
+              <!-- List group -->
+              <ul id='send_list' class="list-group">
+              </ul>
+            </div>
+        </div>
+        
+        
+        
+        <div class="col-md-3 col-md-pull-9">
+            <div class="panel panel-default">
+              <!-- Default panel contents -->
+              <div class="panel-heading">Incoming messages</div>
+              <div class="panel-body"></div>
+              <!-- List group -->
+              <ul id='message_list' class="list-group"></ul>
+            </div>
+        </div>
+     </div>
+      
+  </body>
+
+</html>
