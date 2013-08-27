@@ -6,12 +6,10 @@ var wdgts = {
             .attr('class','list-group');
 
         this_list.add_message = function(msg){
-            var new_li = $('<li>').html(
-                $('<div>')
-                    .data('message',msg)
-                    .attr('style','overflow: hidden ;word-wrap: break-word;')
+            var new_li = $('<li>')
+                    .attr('style','word-wrap: break-word;')
                     .attr('class','list-group-item')
-                    .text(JSON.stringify(msg)))
+                    .text(JSON.stringify(msg))
                     .hide();
                     
             if (this_list.children().length>15){
@@ -27,17 +25,18 @@ var wdgts = {
     search_button : function(search_obj,msg_callback){
         var go_button=$('<button>')
             .attr('type','button')
-            .attr('class','start_msg btn-lg btn-success')
+            .attr('style','width:100%')
+            .attr('class','btn-lg btn-success')
             .text(search_obj.name || 'Go!');
         go_button.payload=search_obj;
         go_button.msg_callback=msg_callback;
         (function(b){
             b.on('click',function (){
                 var $this=$(this);
-                if (!this.intervalID){
-                    this.intervalID = window.setInterval(b.msg_callback,3000,b.payload);
-                } else{
+                if (this.intervalID){
                     this.intervalID=window.clearInterval(this.intervalID);  
+                } else{
+                    this.intervalID = window.setInterval(b.msg_callback,3000,b.payload);
                 }
                 $this.attr('class', (this.intervalID && 'btn-lg btn-danger' || 'btn-lg btn-success'));
 
