@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
     $('#incoming').append(msgs_recvd);
     
     for (var search in searches){
-        var go_button= new wdgts.search_button(searches[search],emit_msg);
+        var go_button= new wdgts.search_button(emit_msg,searches[search]);
         var new_li = $('<li>').attr('class','list-group-item').append(go_button);
         $('#search_list').append(new_li);
     }

@@ -19,7 +19,7 @@ var wdgts = {
         };
         return this_list; 
     },
-    search_button : function(search_obj,msg_callback){
+    search_button : function(msg_callback,search_obj){
         var go_button=$('<button>')
             .attr('type','button')
             .attr('style','width:100%')
