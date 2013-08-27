@@ -4,7 +4,6 @@ var wdgts = {
         var this_list = this_list || $('<ul>')
             .attr('id',id)
             .attr('class','list-group');
-
         this_list.add_message = function(msg){
             var new_li = $('<li>')
                     .attr('style','word-wrap: break-word;')
@@ -15,11 +14,9 @@ var wdgts = {
             if (this_list.children().length>15){
                 this_list.children().last().remove();
             }
-                                
             this_list.prepend(new_li);
             new_li.slideDown();
         };
-        
         return this_list; 
     },
     search_button : function(search_obj,msg_callback){
@@ -27,22 +24,16 @@ var wdgts = {
             .attr('type','button')
             .attr('style','width:100%')
             .attr('class','btn-lg btn-success')
-            .text(search_obj.name || 'Go!');
-        go_button.payload=search_obj;
-        go_button.msg_callback=msg_callback;
-        (function(b){
-            b.on('click',function (){
-                var $this=$(this);
+            .text(search_obj.name || 'Go!')
+            .on('click',function (){
                 if (this.intervalID){
                     this.intervalID=window.clearInterval(this.intervalID);  
                 } else{
-                    this.intervalID = window.setInterval(b.msg_callback,3000,b.payload);
+                    msg_callback(search_obj);
+                    this.intervalID = window.setInterval(msg_callback,3000,search_obj);
                 }
-                $this.attr('class', (this.intervalID && 'btn-lg btn-danger' || 'btn-lg btn-success'));
-
+                this.setAttribute('class', (this.intervalID && 'btn-lg btn-danger' || 'btn-lg btn-success'));
             });
-        })(go_button);
-        
         return go_button;
     }
 };
