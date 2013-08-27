@@ -9,7 +9,7 @@ var wdgts = {
             var new_li = $('<li>').html(
                 $('<div>')
                     .data('message',msg)
-                    .attr('style','overflow: hidden')
+                    .attr('style','overflow: hidden ;word-wrap: break-word;')
                     .attr('class','list-group-item')
                     .text(JSON.stringify(msg)))
                     .hide();
@@ -19,7 +19,7 @@ var wdgts = {
             }
                                 
             this_list.prepend(new_li);
-            new_li.slideDown("slow");
+            new_li.slideDown();
         };
         
         return this_list; 
