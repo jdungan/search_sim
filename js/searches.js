@@ -6,8 +6,8 @@ var searches = {
         name: "Brooklyn",
         user: {
             display_name: "CPB 1",
-            username: "Dream Big",
-            user_id: "61Jv-05",
+            username: "NYC",
+            user_id: "61Jv-06",
         }
     },
     NY2: {
@@ -16,8 +16,8 @@ var searches = {
         name: "Manhattan",
         user: {
             display_name: "CPB 2",
-            username: "Dream Big",
-            user_id: "61Jv-05",
+            username: "NYC",
+            user_id: "61Jv-07",
         }
     },
     NY3: {
@@ -26,8 +26,8 @@ var searches = {
         name: "Redhook",
         user: {
             display_name: "CPB 3",
-            username: "Dream Big",
-            user_id: "61Jv-05",
+            username: "NYC",
+            user_id: "61Jv-08",
         }
     },
     Team1: {
