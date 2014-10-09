@@ -51,7 +51,36 @@ var searches = {
             user_id: "61Jv-05",
         }
     },
-
+    NY1: {
+        lat: 40.700018,
+        lng: -73.988457,
+        name: "Brooklyn",
+        user: {
+            display_name: "CPB 1",
+            username: "Dream Big",
+            user_id: "61Jv-05",
+        }
+    },
+    NY2: {
+        lat: 40.705577,
+        lng: -74.004888,
+        name: "Manhattan",
+        user: {
+            display_name: "CPB 2",
+            username: "Dream Big",
+            user_id: "61Jv-05",
+        }
+    },
+    NY3: {
+        lat: 40.673238,
+        lng: -74.005542,
+        name: "Redhook",
+        user: {
+            display_name: "CPB 3",
+            username: "Dream Big",
+            user_id: "61Jv-05",
+        }
+    }
 
 
 };
