@@ -36,7 +36,7 @@ var searches = {
         lng: -77.036592,
         name: "White House",
         user: {
-            display_name: "White House",
+            display_name: "CPB",
             username: "White House",
             user_id: "61Jv-04",
         }
